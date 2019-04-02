@@ -1,0 +1,17 @@
+def collatz(num):
+""" check if the number is even or odd and performs calculations. """
+    
+    if num % 2 == 0:          # Even
+        print(num // 2)
+        return num // 2
+    elif num % 2 == 1:        # Odd
+        print(3 * num + 1)
+        return 3 * num + 1
+
+
+try:
+    n = input("Enter a number: ")  # Takes user input
+    while n != 1:                  # performs while loop until 'n' becomes 1
+        n = collatz(int(n))        # passes 'n' to collatz() function until it arrives at '1'
+except ValueError:
+    print("Value error . Enter valid integer")
